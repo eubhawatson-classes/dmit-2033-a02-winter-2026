@@ -1,0 +1,105 @@
+/* Theme + baseline tokens */
+:root {
+    /* Baseline Unit: We'll use this to derive all of our spacing tokens. */
+    --base: 0.5rem;
+
+    /* This is the maximum-width for our container; we'll change this value later on in our media queries to give us more room for layout elements. */
+    --container-max: 68rem;
+
+    /* Spacing Tokens: These are based upon a simple scale, derived from our baseline unit. They are used to margins, padding, and gaps. It will help us create a cohesive vertical rhythm. */
+
+    --s-1: calc(var(--base) * 1);
+    --s-2: calc(var(--base) * 2);
+    --s-3: calc(var(--base) * 3);
+    --s-4: calc(var(--base) * 4);
+    --s-5: calc(var(--base) * 5);
+    --s-6: calc(var(--base) * 6);
+
+    /* Horizontal Page Padding: These measurements can be adapted at various breakpoints. */
+    --gutter: var(--s-3);
+    --radius: 16px;
+
+    /* Typography */
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+    /* 
+        Type Scale
+
+        This uses a Minor Third (1.200) scale, with a base font size of 16px:
+
+        1.00rem
+        1.20rem
+        1.44rem
+        1.73rem
+        2.07rem
+        2.49rem
+        2.99rem
+    */
+
+    /* Base Font Size (16px) */
+    --fs-base: 1rem;
+
+    /* Font Scale / Ratio (1.200) */
+    --fs-scale: 1.2;
+
+    /* Typographic Scale Values: this is derived from the base times the scale times the number of steps. */
+    --fs-0: var(--fs-base);
+    --fs-1: calc(var(--fs-0) * var(--fs-scale));
+    --fs-2: calc(var(--fs-1) * var(--fs-scale));
+    --fs-3: calc(var(--fs-2) * var(--fs-scale));
+    --fs-4: calc(var(--fs-3) * var(--fs-scale));
+    --fs-5: calc(var(--fs-4) * var(--fs-scale));
+    --fs-6: calc(var(--fs-5) * var(--fs-scale));
+
+    /* Colour palette (from image). */
+    --bg: #f6f7f8;
+    --surface: #ffffff;
+    --surface-strong: #eef1f3;
+    --border: #d8dde2;
+    --text: #1f2428;
+    --muted: #5b6670;
+}
+
+/* Soft Reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Utility Classes */
+.container {
+    margin: auto;
+    max-width: var(--container-max);
+    padding: 0 var(--gutter);
+    width: 100%;
+}
+
+/* Typographic Styles */
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0;
+}
+
+p {
+    color: var(--muted);
+    margin: 0;
+}

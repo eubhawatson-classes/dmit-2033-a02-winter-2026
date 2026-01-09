@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DMIT2033 - Fluid & Responsive Web Layouts</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <section class="container">
+            <h1>Fluid & Responsive Web Layouts</h1>
+        </section>
+    </header>
+
+    <!-- main.container>section.hero>h2+p -->
+    <main class="container">
+        <section class="hero">
+            <h2>Mostly-fluid layouts prioritise readability.</h2>
+            <p>This page expands and contracts smoothly, but the content stops growing past a certain width. That constraint prevents overly long line lengths on large displays.</p>
+        </section>
+
+        <section class="layout">
+            <h2>Mostly-fluid Layout Example</h2>
+
+            <!-- section.main+aside*2 -->
+            <section class="main">
+                <h3>Main content</h3>
+
+                <p>The primary column fills the available space at smaller sizes and adjusts proportionally as the viewport widens. The centred container ensures the text remains readable on large screens.</p>
+
+                <figure>
+                    <!-- Image Source: https://www.pexels.com/photo/american-robin-on-winter-branch-with-red-berries-35292032/ -->
+                    <img src="img/american-robin.avif" alt="American Robin on Winter Branch with Red Berries">
+                    <figcaption>This image scales fluidly with the layout and loads an appropriately sized file for the available space.</figcaption>
+                </figure>
+            </section> <!-- end of section.main -->
+
+            <aside class="side">
+                <h3>Sidebar</h3>
+                <p>The sidebar provides supporting information that complements the main content without competing for attention. At smaller screen sizes, it appears below the primary content so that reading order remains clear and predictable.</p>
+
+                <p>As the available space increases, the sidebar shifts alongside the main column and becomes proportionally narrower. This ensures it remains readable while still clearly secondary to the primary content area.</p>
+            </aside>
+
+            <aside class="notes">
+                <h3>Additional Notes</h3>
+                <p>This layout is considered <em>mostly fluid</em> because it combines flexible elements with intentional constraints. While the page padding and columns adapt smoothly to the viewport, the content itself does not grow indefinitely.</p>
+
+                <p>On very large screens, the centred container prevents excessively long line lengths, which can negatively affect readability and scanning. This approach balances flexibility with usability across a wide range of devices.</p>
+            </aside>
+        </section>
+    </main>
+</body>
+
+</html>
