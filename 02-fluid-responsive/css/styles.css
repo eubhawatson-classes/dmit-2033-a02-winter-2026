@@ -93,7 +93,9 @@ img {
 }
 
 /* Typographic Styles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 600;
     line-height: 1.15;
     margin: 0;
@@ -102,4 +104,180 @@ h1, h2, h3 {
 p {
     color: var(--muted);
     margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #0c0f126c;
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .container {
+        padding: var(--s-2) var(--gutter);
+    }
+
+    h1 {
+        color: var(--surface);
+        font-size: var(--fs-1);
+        font-weight: 400;
+    }
+}
+
+/* Main Layout */
+main.container {
+    padding: var(--s-6);
+}
+
+/* Hero */
+.hero {
+    background-color: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: var(--s-6);
+    padding: var(--s-6);
+
+    h2 {
+        font-size: var(--fs-3);
+        margin-bottom: var(--s-3);
+    }
+
+    p {
+        font-size: 1.15rem;
+        line-height: 1.75;
+        max-width: 70ch;
+    }
+}
+
+/* Main Section & Asides */
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+    margin-top: 0;
+
+    h2 {
+        color: var(--muted);
+        font-size: var(--fs-3);
+        margin-bottom: var(--s-3);
+    }
+
+    h3 {
+        font-size: var(--fs-2);
+    }
+
+    .main,
+    .side,
+    .notes {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: column;
+        gap: var(--s-3);
+        padding: var(--s-4);
+    }
+}
+
+figure {
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - var(--base));
+    margin: 0;
+    overflow: hidden;
+
+    figcaption {
+        background-color: var(--surface-strong);
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.95rem;
+        padding: var(--s-2) var(--s-3);
+    }
+}
+
+/* Media Queries */
+
+/* Medium Screens */
+@media (min-width: 48rem) {
+    :root {
+        --gutter: var(--s-4);
+    }
+
+    header h1 {
+        font-size: var(--fs-2);
+    }
+
+    .hero {
+        > * {
+            margin: var(--s-3) auto;
+        }
+
+        h2 {
+            font-size: var(--fs-4);
+            text-align: center;
+        }
+    }
+
+    .layout {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        flex-basis: 100%;
+        margin-bottom: 0;
+        order: -10;
+    }
+
+    .main {
+        /* 
+        
+        The flex shorthand property is for flex items. It takes three arguments:
+        
+        1. If there's room, can this grow?
+        2. If there isn't room, can this shrink?
+        3. What should the baseline size be?
+
+        */
+        flex: 2 1 34rem;
+    }
+
+    .side {
+        flex: 1 1 16rem;
+    }
+
+    .notes {
+        flex-basis: 100%;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 100rem) {
+    :root {
+        --gutter: var(--s-6);
+        --container-max: 93rem;
+    }
+
+    .hero h2 {
+        font-size: var(--fs-5);
+    }
+
+    .layout {
+        h2 {
+            font-size: var(--fs-5);
+        }
+
+        .main {
+            flex: 3 1 0;
+        }
+
+        .side {
+            flex: 1.25 1 0;
+        }
+
+        .notes {
+            flex: 1.25 1 0;
+            order: -1;
+        }
+    }
 }
