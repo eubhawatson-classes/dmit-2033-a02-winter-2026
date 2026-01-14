@@ -17,9 +17,13 @@
 body {
   background-color: var(--bg);
   color: var(--text);
+  display: flex;
+  flex-direction: column;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: space-between;
   line-height: 1.5;
   margin: 0;
+  min-height: 100vh;
 
   ul {
     list-style-type: none;
@@ -36,6 +40,35 @@ body {
 }
 
 /* Utility Classes */
+.brand {
+  align-items: center;
+  display: inline-flex;
+  font-size: 2rem;
+  margin: var(--gutter) 0;
+  text-decoration: none;
+
+  .icon {
+    color: var(--rose);
+    width: 2rem;
+  }
+}
+
+.container {
+ margin: auto;
+ max-width: var(--container-max);
+ padding: var(--gutter);
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  gap: var(--gutter);
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
 
 .visually-hidden {
   height: 0px;
@@ -44,4 +77,80 @@ body {
   position: absolute;
   top: -9999px;
   width: 0px;
+}
+
+/* Header Layout */
+
+header {
+  border-bottom: 1px solid var(--border);
+
+  nav {
+    justify-content: space-between;
+    padding-block: 1rem;
+
+    .brand {
+      color: var(--text);
+    }
+
+    a:not(.brand) {
+      color: var(--rose);
+      font-size: 1.125rem;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      } /* end of hover state */
+    } /* end of every anchor tag that ISN'T the .brand */
+  } /* end of nav */
+} /* end of header */
+
+/* Main Layout */
+main {
+  padding-block: 2rem;
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+
+  a {
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    color: var(--text);
+    display: inline-flex;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    transition: 0.3s ease all;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+/* Footer Layout */
+
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  
+  > .flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  p {
+    margin-top: -1rem;
+  }
+}
+
+/* Focus Styles */
+
+:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
