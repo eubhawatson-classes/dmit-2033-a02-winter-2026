@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVG Minification &amp; Symbols</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- 
+        Hidden Sprite Definition Block: Here, we're defining all of our symbols once, then popping them in everywhere we want to use them. This is a common production pattern.
+
+        However, make sure to hide this definition block or otherwise make sure that it does not render because we do not want it to appear as part of the flow content.
+
+        Note: Make sure to remove any hard-coded stroke colours and change it to currentColor if you want to be able to control it with external styles / CSS.
+    -->
+
+    <svg aria-hidden="true" focusable="false" class="visually-hidden">
+        <!-- Facebook -->
+        <symbol id="facebook-logo" viewBox="0 0 400 400" fill="none">
+            <path
+                d="M272.7 142c.4-7 1-17-1-19-16-15.2-59-5.8-67 14.9q-7.7 19.6-6.2 53.6-24.2 0-27.2 3c-1.8 1.8-2 32.3 0 32.3 8.5 0 24.6 2 24.6 2s.6 78.8 0 79.4c-2.9 3-95.5 0-108 0-6.6 0 0-101 0-111.9 0-7.8-.7-96.4 0-97.2 3.5-3.5 36.3-2.7 41.3-2.7 29.6 0 157.3-14.8 177.5-2.6 8.6 5.2 7.2 38.7 7.2 46.6 0 11.7-.4 162.3-4 167.8-3.2 5-72.6 2.3-77 0q-2.1-1 0-76.9 33 3.9 33-4.5v-28.7q0-3.7-30.6-3.7-1-26 3.6-35.2c5-10 10.1-8.3 23.2-6.5"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+
+        <!-- Heart -->
+        <symbol id="heart-logo" viewBox="75 75 225 250" fill="none">
+            <path
+                d="M180 276.8c-15.6-9.5-18.8-14.7-32.4-28.4-81.5-82.5-10.4-136 25.3-123q10 3.7 23 22.5a38 38 0 0 1 18.8-25c72-43.5 106 52.3 36.6 114.5-16.7 15-43.4 39.9-54.5 50.2"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+
+        <!-- Instagram -->
+        <symbol id="instagram-logo" viewBox="0 0 400 400" fill="none">
+            <path
+                d="M97.8 267c-5.1-16.6-2.7-34-4.9-51-1.8-14.4-5.1-92 6.5-103.5 20.6-20.4 174.2-31.8 195.9-3.1C311 130 308 170.9 308 195.3c0 26.4 6.2 67-14.4 87.5-31 30.8-142.9 27.9-184.7 17.5"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path
+                d="M92.4 178.2c15.7-5.4 60.5 3.4 62.3-.3a59 59 0 0 1 43.2-33.9c19.4-3.7 48.2 0 57.5 19 45.6 93-50.8 120.5-78.3 105.7-24.4-13-22.4-30.8-22.4-44.6"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path
+                d="M190.4 185.5c5.2-5.7 15.9-13.3 24.1-11.3 26.1 6.5 25.7 57.3-1.6 62.8-25.6 5-44.9-32.3-22.5-43.5m81-15.7c6.7-1 28.4-.2 35-1.3M279.8 139v-1.7"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+
+        <!-- Pinterest -->
+        <symbol id="pinterest-logo" viewBox="0 0 400 400" fill="none">
+            <path d="M91.8 173.5c29.8-169.1 295.2-65 194.5 96-48.7 78.2-197.2 45.5-189.5-53.9" stroke="currentColor"
+                stroke-opacity=".9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+                d="M153.6 218.6C141.9 187.8 142 155 174 136.7c57.3-32.6 106 58.8 61.5 99.2-8 7.3-22 9.9-31.7 5.6-57.6-25.6 11.7-109.1-9.3-25.4-2.6 10.6-5.2 21.2-8.7 31.6l-10.5 32.8"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+
+        <!-- Twitter -->
+        <symbol id="twitter-logo" viewBox="0 0 400 400" fill="none">
+            <path
+                d="M283.5 126c-66.6-55.3-67.8 32.5-81.3 37.9-27.3 10.8-56.6-5.4-78.4-24-2.1-1.9-21.5-27.4-22.6-26.2-19.5 19.5 0 81.6 17 96.1s20.4 10.3 20.4 12c0 2.3-5.2 1.3-6.3 1.5-21.2 3.6-39.6-25.2-44.4-28.6s.8 20.2 2.8 25.4a63 63 0 0 0 56.4 40m160.4-144.8a56 56 0 0 1-24 10.1"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path
+                d="M315 136.7c-7.8 2-16.3 2-24 7.2-1.6 1 .6 7.2 2 20.7 1.6 13.5-3.5 30.2-7.7 42.9-22.5 68.3-139.2 108.7-186.7 67.2M250.8 133l2.5 3.7"
+                stroke="currentColor" stroke-opacity=".9" stroke-width="16" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="container">
+            <nav class="flex">
+                <a href="#" class="brand">
+                    I
+                    <svg role="img" class="icon">
+                        <title>Heart</title>
+                        <use href="#heart-logo"></use>
+                    </svg>
+                    Design
+                </a>
+
+                <ul class="flex">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1>Visit Us On Social Media</h1>
+            <p>These links use the SVG symbol and use pattern so the icon markup can be defined in a single place and
+                reduce clutter in the source code.</p>
+
+            <div class="flex social">
+                <!-- a*4>svg>title+use -->
+                <a href="#" aria-label="Visit us on Facebook!">
+                    <svg role="img" class="icon">
+                        <title>Facebook Logo</title>
+                        <use href="#facebook-logo"></use>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="#" aria-label="Visit us on Instagram!">
+                    <svg role="img" class="icon">
+                        <title>Instagram Logo</title>
+                        <use href="#instagram-logo"></use>
+                    </svg>
+                    Instagram
+                </a>
+                <a href="#" aria-label="Visit us on Pinterest!">
+                    <svg role="img" class="icon">
+                        <title>Pinterest Logo</title>
+                        <use href="#pinterest-logo"></use>
+                    </svg>
+                    Pinterest
+                </a>
+                <a href="#" aria-label="Visit us on Twitter!">
+                    <svg role="img" class="icon">
+                        <title>Twitter Logo</title>
+                        <use href="#twitter-logo"></use>
+                    </svg>
+                    Twitter
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="container">
+            <!-- Brand -->
+            <div>
+                <h2 href="#" class="brand">
+                    I
+                    <svg role="img" class="icon">
+                        <title>Heart</title>
+                        <use href="#heart-logo"></use>
+                    </svg>
+                    Design
+                </h2>
+                <p>This website is an academic exercise.</p>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex social">
+                <!-- a*4>svg>title+use -->
+                <a href="#" aria-label="Visit us on Facebook!">
+                    <svg role="img" class="icon">
+                        <title>Facebook Logo</title>
+                        <use href="#facebook-logo"></use>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="#" aria-label="Visit us on Instagram!">
+                    <svg role="img" class="icon">
+                        <title>Instagram Logo</title>
+                        <use href="#instagram-logo"></use>
+                    </svg>
+                    Instagram
+                </a>
+                <a href="#" aria-label="Visit us on Pinterest!">
+                    <svg role="img" class="icon">
+                        <title>Pinterest Logo</title>
+                        <use href="#pinterest-logo"></use>
+                    </svg>
+                    Pinterest
+                </a>
+                <a href="#" aria-label="Visit us on Twitter!">
+                    <svg role="img" class="icon">
+                        <title>Twitter Logo</title>
+                        <use href="#twitter-logo"></use>
+                    </svg>
+                    Twitter
+                </a>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

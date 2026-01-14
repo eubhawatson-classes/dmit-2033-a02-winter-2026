@@ -1,0 +1,47 @@
+/* Variable Definitions */
+:root {
+  --container-max: 68rem;
+  --gutter: 1rem;
+  --border: rgb(215, 211, 209);
+  --text: rgb(12, 10, 9);
+  --muted: rgb(87, 83, 77);
+  --bg: rgb(245, 245, 244);
+  --rose: rgb(199, 0, 54);
+}
+
+/* Soft Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+
+  ul {
+    list-style-type: none;
+  }
+
+  p {
+    color: var(--muted);
+  }
+
+  h1,
+  h2 {
+    font-weight: 400;
+  }
+}
+
+/* Utility Classes */
+
+.visually-hidden {
+  height: 0px;
+  left: -9999px;
+  overflow: hidden;
+  position: absolute;
+  top: -9999px;
+  width: 0px;
+}
