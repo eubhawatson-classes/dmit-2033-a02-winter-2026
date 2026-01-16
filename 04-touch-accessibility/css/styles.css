@@ -1,0 +1,27 @@
+:root {
+    --emerald: #388e3c;
+    --hover: #2e7d32;
+    --grey: #eee;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* Universal Styles & Soft Reset */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
+
+svg {
+    margin: auto;
+    width: 2rem;
+}
