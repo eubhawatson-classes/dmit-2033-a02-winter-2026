@@ -1,6 +1,9 @@
 :root {
-    --emerald: #388e3c;
-    --hover: #2e7d32;
+    --primary: #059669;
+    --primary-hover: #065f46;
+    --secondary: #ecfdf5;
+    --secondary-hover: #d1fae5;
+    --text: #022c22;
     --grey: #eee;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
@@ -12,16 +15,149 @@
 }
 
 body {
-    color: #333;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 100%;
+    justify-content: space-between;
     line-height: 1.5;
     margin: 0;
     min-height: 100vh;
     padding: 0;
 }
 
+/* Typographic Styles */
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+button,
+li,
+a {
+    transition: 0.3s ease all;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+/* Utility Classes */
+.visually-hidden {
+    left: -9999px;
+    position: absolute;
+    top: -9999px;
+}
+
+/* Mobile Layout Styles */
+
 svg {
     margin: auto;
     width: 2rem;
+}
+
+header {
+    background-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+    position: relative;
+    z-index: 999;
+
+    section,
+    .logo-container a {
+        display: flex;
+        gap: 1rem;
+    }
+
+    section {
+        justify-content: space-between;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    li a {
+        border-top: 1px solid var(--primary-hover);
+        /* This is super important for touch targets! Anchor tags are inline by default, which means the 'hitbox' is as large as the actual content. We're turning it into a block-level element so that the 'hitbox' extends across the viewport. */
+        display: block; 
+        font-size: 1.125rem;
+        padding: 3mm 1rem;
+
+        &:hover {
+            background-color: var(--primary-hover);
+        }
+    }
+
+    form {
+        border-top: 1px solid var(--primary-hover);
+        display: flex;
+        padding: 2rem 1rem;
+        width: 100%;
+
+        input {
+            border: 1px solid var(--primary-hover);
+            font-size: 1rem;
+            /* For its position on the screen (slightly above centre), this needs to be at least 9mm. */
+            min-height: 11mm;
+            padding: 0.5rem;
+
+            &[type="search"] {
+                /* border-radius can accept four arguments; it starts in the top-left corner and goes clockwise. */
+                border-radius: 8px 0 0 8px;
+                flex: 2 1 80%;
+            }
+
+            &[type="submit"] {
+                background-color: var(--primary-hover);
+                border-radius: 0 8px 8px 0;
+                color: #fff;
+                cursor: pointer;
+                flex: 1 1 14mm;
+                transition: 0.3s ease all;
+
+                &:hover {
+                    background-color: #064e3b;
+                }
+            }
+        }
+    }
+}
+
+button {
+    background-color: var(--primary);
+    border: 1px solid var(--primary-hover);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 3mm 2mm;
+    text-align: center;
+    width: 14mm;
+
+    &:hover {
+        background-color: var(--primary-hover);
+    }
+}
+
+/* Menu (List of Links) */
+header nav {
+    background-color: var(--primary);
+    left: 0;
+    position: absolute;
+    top: -100vh;
+    width: 100%;
+
+    &.show-menu {
+        top: 6.25rem;
+    }
+
+    /* We're putting this here to make sure that the menu animates whe nwe bring it back, not just disappear. */
+    &:not(.show-menu) {
+        top: -100vh;
+    }
 }
