@@ -1,0 +1,79 @@
+:root {
+    --sky-900: #0c4a6e;
+    --sky-700: #0369a1;
+    --sky-50: #f0f9ff;
+}
+
+/* Utility Classes */
+.flex {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+/* Albatross */
+.albatross-container {
+    flex-wrap: wrap;
+
+    .item {
+        background-color: var(--sky-700);
+        color: var(--sky-50);
+        flex-grow: 1;
+        /* calc( (threshholdWidth - containerWidth) * exaggerationFactor ) */
+        flex-basis: calc((600px - 100%) * 999);
+        max-inline-size: 100%;
+        min-inline-size: min(100%, 300px);
+        padding: 1rem 2rem;
+    }
+}
+
+/* Fluid Sidebar */
+.fluid-sidebar {
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    div {
+        background-color: var(--sky-700);
+        padding: 2rem 1rem;
+    }
+
+    h2, p {
+        color: var(--sky-50);
+        margin: 1rem;
+    }
+
+    .sidebar {
+        /*
+            minimum width: 360px
+            preferred width: 30ch
+            maximum width: 25% of the flex container
+        */
+        flex-basis: clamp(360px, 30ch, 25%);
+        flex-grow: 1;
+    }
+
+    .content {
+        flex-basis: 0;
+        flex-grow: 999;
+        min-inline-size: 50%;
+    }
+}
+
+/* Deconstructed Pancake Layout */
+
+.pancake-container {
+    flex-wrap: wrap;
+
+    .pancake-box {
+        background-color: var(--sky-700);
+        color: var(--sky-50);
+        flex: 1 1 17rem;
+        padding: 1rem;
+    }
+}

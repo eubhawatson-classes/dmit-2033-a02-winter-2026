@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Fluid Sidebar (The Asymmetrical Split)</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>The Fluid Sidebar (The Asymmetrical Split)</h1>
+            <p class="lead">This pattern established a priority-based layout. The sidebar requests a specific ideal width (ex. 30ch), while the main content is configured to be 'greedier', aggressively filling all remaining space. Wrapping occurs only when the content area no longer meets it own minimum readable width, providing a natural, component-driven transition.</p>
+        </div>
+    </header>
+
+    <!-- Layout Pattern -->
+    <main class="container">
+        <section class="fluid-sidebar flex">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, corporis quo eius voluptas dolor officia sint pariatur earum! Accusamus eum ut quibusdam ipsum atque maxime quidem illum veritatis nobis in!</p>
+            </div>
+            <div class="content">
+                <h2>Main Content</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo illum cumque soluta dolorem sunt ratione hic suscipit, nobis vel maxime iste tempore laudantium facilis officia, iure quas! Ad, animi eligendi.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, voluptas non. Tempore id adipisci, neque nemo itaque, voluptates beatae, dignissimos natus dolorum autem libero dolor ipsa expedita cupiditate quidem placeat.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">Return to Table of Contents</a></p>
+    </footer>
+</body>
+
+</html>

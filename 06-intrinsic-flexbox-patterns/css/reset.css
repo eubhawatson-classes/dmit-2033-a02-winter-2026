@@ -1,0 +1,98 @@
+:root {
+    --heading: #111827;
+    --paragraph: #374151;
+    --border: #d1d5db;
+    --link: #1976d2;
+    --link-active: #03a9f4;
+    --link-visited: #01579b;
+}
+
+* {
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    padding: 1rem;
+
+    p {
+        margin: 1rem auto 2rem auto;
+        max-width: 75ch;
+    }
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+
+    p {
+        margin: 1rem auto;
+    }
+}
+
+/* Typographic Styles */
+
+h1, h2 {
+    color: var(--heading);
+    font-weight: 400;
+}
+
+h1 {
+    /* font-size: 3.625rem; */
+    /* 
+        clamp(min, preferred, max)
+        Here, we're saying:
+        - never smaller than 2.25rem
+        - when in between sizes, scale up with the viewport
+        - never larger than 3.625rem
+    */
+    font-size: clamp(2.25rem, 5vw + 1rem, 3.625rem);
+    margin: 1rem auto;
+}
+
+h2 {
+    /* font-size: 2.975rem; */
+    font-size: clamp(1.75rem, 3.5vw + 0.75rem, 2.975rem);
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p, li {
+    color: var(--paragraph);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--link);
+
+    &:visited {
+        color: var(--link-visited);
+    }
+
+    &:hover,
+    &:active {
+        color: var(--link-active);
+    }
+}
