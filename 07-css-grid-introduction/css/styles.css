@@ -1,0 +1,51 @@
+:root {
+    --black: #13171B;
+    --white: #edf0ed;
+    --grey: #606971;
+    --accent-burnt: #BD6507;
+    --accent-ochre: #C89A2B;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Typographic Styles */
+
+h1 {
+    font-size: 3.75rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+p, li {
+    margin: 1rem 0;
+}
+
+/* CSS Grid Columns Page */
+
+.columns {
+    section {
+        /* When you turn on a grid container, nothing happens. We need to define how many columns and rows we want. */
+        display: grid;
+        gap: 1rem;
+        /* grid-template-columns: repeat(3, calc((100% / 3) - (2rem / 3))); */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr;
+    }
+
+    .col {
+        border: 1px solid var(--grey);
+        border-radius: 4px;
+        padding: 0 1rem;
+    }
+}
