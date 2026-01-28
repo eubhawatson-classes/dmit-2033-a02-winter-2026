@@ -19,6 +19,38 @@ body {
 
 /* Utilities */
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+}
+
+.grid-container {
+    display: grid;
+    gap: var(--gutter);
+
+    @media (min-width: 1080px) {
+        grid-template-columns: minmax(min(100%, 42rem), 1fr) minmax(16rem, 22rem);
+
+        > h2 {
+            grid-column: 1 / -1;
+            margin-bottom: var(--s-2);
+        }
+
+        > .flex-container {
+            grid-column: 1;
+        }
+
+        aside {
+            grid-column: -1 / -2;
+
+            a {
+                text-align: right;
+            }
+        }
+    }
+}
+
 .btn {
     background-color: var(--teal-700);
     border-radius: calc(var(--radius) / 4);
@@ -35,9 +67,97 @@ body {
     }
 }
 
+a:not([class]) {
+    color: var(--teal-700);
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: var(--gutter);
+    
+    &:hover,
+    &:active {
+        color: var(--teal-800);
+    }
+}
+
 /* Main Layout */
 
+header,
+main {
+    padding: var(--gutter);
+}
 
+header {
+    background-color: white;
+    border-bottom: 1px solid var(--slate-100);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--gutter);
+}
+
+main {
+    max-width: 1700px;
+    margin: auto;
+}
 
 /* Card Components */
 
+aside,
+.card {
+    background-color: white;
+    border: 1px solid var(--slate-100);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card {
+    /* 
+        Here, we're declaring each card as its own container. This will allow the card's internal layout to respond to the card's width, not the viewport or the screen size (like in media queries).
+    */
+    container-type: inline-size;
+    container-name: card;
+    flex: 1 1 min(100%, 360px);
+
+    .card-layout {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .card-header {
+            padding: var(--gutter);
+
+            img {
+                border-radius: calc(var(--radius) / 2);
+                object-fit: cover;
+            }
+        }
+
+        .card-body {
+            flex: 1;
+            gap: 0.75rem;
+            padding: var(--gutter);
+
+            .btn {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@container card (min-width: 550px) {
+    .card .card-layout {
+        align-items: center;
+        flex-direction: row;
+
+        .card-header {
+            flex: 0 0 50%;
+        }
+    }
+}
+
+aside {
+    padding: var(--s-5) var(--gutter);
+
+    a:not(:last-of-type) {
+        border-bottom: 1px solid var(--slate-200);
+        padding-bottom: var(--gutter);
+    }
+}

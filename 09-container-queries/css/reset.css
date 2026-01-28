@@ -52,7 +52,28 @@ html {
     Let's try it out below.
 */
 
+h1 {
+    font-size: clamp(var(--fs-2), 3vw, var(--fs-4));
+}
 
+h2 {
+    font-size: clamp(var(--fs-3), 5vw, var(--fs-6));
+    line-height: 1.2;
+    margin-bottom: var(--s-3);
+}
+
+h3 {
+    font-size: clamp(var(--fs-1), 2vw, var(--fs-2));
+}
+
+h4 {
+    font-size: var(--fs-1);
+}
+
+p {
+    font-size: var(--fs-0);
+    margin-bottom: var(--s-3);
+}
 
 img {
     display: block;
