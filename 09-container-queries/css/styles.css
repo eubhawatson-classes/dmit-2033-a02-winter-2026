@@ -1,0 +1,43 @@
+/* Colour Palette from Tailwind v.3: https://v3.tailwindcss.com/docs/customizing-colors#default-color-palette */
+:root {
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --teal-700: #0f766e;
+    --teal-800: #115e59;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background-color: var(--slate-50);
+    color: var(--slate-800);
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Utilities */
+
+.btn {
+    background-color: var(--teal-700);
+    border-radius: calc(var(--radius) / 4);
+    box-shadow: var(--shadow-sm);
+    color: white;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    transition: 0.4s ease all;
+
+    &:hover,
+    &:active {
+        background-color: var(--teal-800);
+    }
+}
+
+/* Main Layout */
+
+
+
+/* Card Components */
+

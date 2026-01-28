@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Container Queries</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>The Cosy Cuppa Kitchen</h1>
+    </header>
+    <main>
+        <section class="grid-container">
+            <h2>Classic British Comfort Food (No Fuss, Big Payoff)</h2>
+
+            <!-- Card Components -->
+            <div class="flex-container">
+                <article class="card">
+                    <!-- Note: We need a .card-layout because of how container queries work. If .card is our container, we can only apply rules to its descendants when the query conditions are met. -->
+                    <div class="card-layout">
+                        <div class="card-header">
+                            <img src="img/fish-and-chips.avif" alt="Close-up of fried fish and chips with tartar sauce and lime, perfect for food lovers.">
+                        </div>
+                        <div class="card-body flex-container">
+                            <h3>Proper Fish and Chips</h3>
+                            <p>Golden, crisp batter; fluffy chips; and all the essential extras (mushy peas optional, salt and brown vinegar non-negotiable). Weeknight-friendly tips included.</p>
+                            <a href="#" class="btn">Get the recipe</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-layout">
+                        <div class="card-header">
+                            <img src="img/scones.avif" alt="A close-up of freshly baked scones topped with cream and jam, perfect for breakfast or a teatime treat.">
+                        </div>
+                        <div class="card-body flex-container">
+                            <h3>Scones with Clotted Cream</h3>
+                            <p>Soft, tender scones with that just-baked warmth. Includes jam options, clotted cream notes, and the ever-polite debate about which goes first.</p>
+                            <a href="#" class="btn">Bake some scones</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-layout">
+                        <div class="card-header">
+                            <img src="img/full-english.avif" alt="Delicious full English breakfast with fried eggs, toast, and baked beans on a plate.">
+                        </div>
+                        <div class="card-body flex-container">
+                            <h3>The Full English Fry-Up</h3>
+                            <p>Everything you want on one plate: sausages, bacon, eggs, beans, tomatoes, mushrooms, and toast. Timing tips so it all lands hot at once.</p>
+                            <a href="#" class="btn">Put the kettle on</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <h3>Kitchen Notes</h3>
+                <p>Here’s where you’ll find quick tips, substitutions, and “don’t panic” fixes for when something goes a bit sideways (it happens to all of us).</p>
+                <a href="#">Common substitutions</a>
+
+                <h4>Today’s shortcuts</h4>
+                <p>If you’re short on time: oven chips work, an air fryer helps, and a warm teapot buys you patience while the batter rests.</p>
+                <a href="#">Time-saving swaps</a>
+
+                <h4>What’s in season</h4>
+                <p>Look for firm white fish, good Maris Piper potatoes, and fresh berries if you want to dress up your scones without overthinking it.</p>
+                <a href="#">Seasonal ingredients guide</a>
+            </aside>
+        </section>
+    </main>
+</body>
+
+</html>

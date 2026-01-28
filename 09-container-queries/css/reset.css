@@ -1,0 +1,60 @@
+/* 
+    Here's our typographic scale and spacing system. The only thing we need to tweak are the things like the gutter, radius, base, and scale. Everything else is always calculated the same way (linear and geometric).
+*/
+
+:root {
+    --base: 0.5rem;
+
+    --s-1: calc(var(--base) * 1);
+    --s-2: calc(var(--base) * 2);
+    --s-3: calc(var(--base) * 3);
+    --s-4: calc(var(--base) * 4);
+    --s-5: calc(var(--base) * 5);
+    --s-6: calc(var(--base) * 6);
+
+    --gutter: var(--s-3);
+    --radius: 16px;
+
+    --fs-base: 1rem;
+    --fs-scale: 1.250;
+
+    --fs-0: var(--fs-base);
+    --fs-1: calc(var(--fs-0) * var(--fs-scale));
+    --fs-2: calc(var(--fs-1) * var(--fs-scale));
+    --fs-3: calc(var(--fs-2) * var(--fs-scale));
+    --fs-4: calc(var(--fs-3) * var(--fs-scale));
+    --fs-5: calc(var(--fs-4) * var(--fs-scale));
+    --fs-6: calc(var(--fs-5) * var(--fs-scale));
+}
+
+* {
+    box-sizing: border-box;
+    font-weight: 400;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/*
+    clamp(min, preferred, max)
+
+    clamp() lets a value scale fluidly between two limits.
+
+    - The minimum is the smallest size we'll allow.
+    - The preferred value is usually viewport-based, so it can grow smoothly.
+    - The maximum caps the size so it doesn't get out of hand.
+
+    Basically, we're saying: 'grow when there's space, but never smaller or larger than this.'
+
+    Let's try it out below.
+*/
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
