@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Magazine (CSS Grid Build)</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Magazine" />
+    <link rel="manifest" href="img/favicons/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Grid Magazine">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content=""> -->
+    <meta property="og:image" content="img/favicons/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="inner-container">
+            <h1><a href="index.html">Magazine</a></h1>
+
+            <nav id="navbar" class="top-nav">
+                <ul>
+                    <!-- We're using on-page anchors here, which means we're linking to different parts of the page with the IDs specified in our href values. -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#recent-posts">Recent</a></li>
+                    <li><a href="#popular-posts">Popular</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button aria-expanded="false" aria-controls="navbar" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                menu
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <section id="recent-posts" class="recent-posts">
+                <h2>Recent Posts</h2>
+
+                <!-- article*5>img+h3+p+a[href="#"].article-link -->
+
+                <article>
+                    <img src="img/healthy-breakfast-pots.webp" alt="A masor jar filled with fruit and oats.">
+                    <h3>Sept 14, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia pariatur consequatur voluptatem fugiat ex ipsum excepturi dolore, vel esse praesentium cumque, cum quia cupiditate, suscipit vero earum veniam tempora.</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/holding-coffee-in-bed.webp" alt="A person holding a cup of coffee in bed.">
+                    <h3>August 31, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, eum quia ut aliquid ad cumque quos magni placeat impedit eligendi beatae velit, laudantium aliquam ratione! Error modi dolorum perspiciatis doloribus.</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/legs-running-on-track.webp" alt="A person in compression tights, running on an outdoor track.">
+                    <h3>August 17, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita fuga quaerat doloribus dolore odio quo atque laboriosam architecto eaque velit voluptate beatae explicabo tenetur, obcaecati facilis, nemo facere a repudiandae!</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/writing-down-goals.webp" alt="A top-down view of a person writing down their goals in a bullet journal.">
+                    <h3>July 20, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores temporibus eius perspiciatis fugiat iusto omnis, fugit exercitationem magnam, dignissimos aut cupiditate maxime molestiae nemo laudantium minus doloremque minima vel!</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/healthy-salad.webp" alt="A healthy garden salad, served alongside caprese and soup.">
+                    <h3>July 17, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt, facere ratione incidunt fugit aspernatur similique officiis aperiam expedita quis eum nihil obcaecati omnis alias magni laudantium perferendis aut voluptates!</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+            </section>
+
+            <section id="popular-posts" class="popular-posts">
+                <h2>Popular Posts</h2>
+
+                <!-- article*5>img+div>h3+p+a[href="#"].btn -->
+                 <article>
+                    <img src="img/vrkasana-yoga.avif" alt="A person in athletic wear, doing a yoga routine on a rooftop.">
+                    <div>
+                        <h3>Benefits of Yoga</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In consectetur, earum laudantium asperiores molestiae, eaque quibusdam culpa voluptate quis enim nam pariatur vel. Vitae a reprehenderit iusto consequuntur repellendus quod?</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                 </article>
+                 <article>
+                    <img src="img/abstract.avif" alt="Pink and orange abstract colours.">
+                    <div>
+                        <h3>Meditation for the Mind</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, voluptates molestiae! Voluptatibus placeat labore tempore repudiandae vero assumenda mollitia facere corrupti laudantium itaque quia, voluptatem voluptates quaerat ducimus architecto minima?</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                 </article>
+                 <article>
+                    <img src="img/beach-at-sunrise.avif" alt="Sunrise over the ocean, taken from the top of a pier.">
+                    <div>
+                        <h3>Location, Location, Location</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dicta soluta in illum laboriosam explicabo vero illo at impedit minus exercitationem delectus dignissimos quas rerum, voluptatem consectetur quis! Quae, aliquam.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                 </article>
+                 <article>
+                    <img src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                 </article>
+                 <article>
+                    <img src="" alt="">
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                 </article>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="inner-container">
+
+        </div>
+    </footer>
+</body>
+
+</html>
