@@ -19,3 +19,29 @@ $dark: (
   color-accent:#26a69a,
   color-accent-strong:#00796b
 );
+
+/*
+    Below is a tiny helper function. It lets us write: 
+
+        color: c(color-text);
+
+    instead of the longer: 
+
+        color: var(--color-text);
+*/
+
+@function c($name) { @return var(--#{$name}); }
+
+/*
+    @each is our Sass "foreach": for each key ($k) and value ($v) in the maps we created up above, output a line like --color-text: #323232;
+*/
+
+:root {
+    @each $k, $v in $light { --#{$k}: #{$v}; }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @each $k, $v in $dark { --#{$k}: #{$v}; }
+    }
+}

@@ -1,1 +1,141 @@
-/*# sourceMappingURL=styles.css.map */
+/*
+    Below is a tiny helper function. It lets us write: 
+
+        color: c(color-text);
+
+    instead of the longer: 
+
+        color: var(--color-text);
+*/
+/*
+    @each is our Sass "foreach": for each key ($k) and value ($v) in the maps we created up above, output a line like --color-text: #323232;
+*/
+:root {
+  --color-bg: #eceff1;
+  --color-text: #323232;
+  --color-muted: #4b5563;
+  --color-border: #cfd8dc;
+  --color-btn: #262626;
+  --color-accent: #00796b;
+  --color-accent-strong: #134e4a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #292f35;
+    --color-text: #eceff1;
+    --color-muted: #cfd8dc;
+    --color-border: #171717;
+    --color-btn: #111;
+    --color-accent: #26a69a;
+    --color-accent-strong: #00796b;
+  }
+}
+:root {
+  --base: 0.5rem;
+  --s-1: calc(var(--base) * 1);
+  --s-2: calc(var(--base) * 2);
+  --s-3: calc(var(--base) * 3);
+  --s-4: calc(var(--base) * 4);
+  --s-5: calc(var(--base) * 5);
+  --s-6: calc(var(--base) * 6);
+  --radius: 4px;
+  --gutter: var(--s-3);
+  --fs-base: 1rem;
+  --fs-scale: 1.25;
+  --fs-0: var(--fs-base);
+  --fs-1: calc(var(--fs-0) * var(--fs-scale));
+  --fs-2: calc(var(--fs-1) * var(--fs-scale));
+  --fs-3: calc(var(--fs-2) * var(--fs-scale));
+  --fs-4: calc(var(--fs-3) * var(--fs-scale));
+  --fs-5: calc(var(--fs-4) * var(--fs-scale));
+  --fs-6: calc(var(--fs-5) * var(--fs-scale));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: var(--fs-4);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--fs-3);
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: var(--fs-2);
+  line-height: 1.2;
+}
+
+p {
+  font-size: var(--fs-0);
+  line-height: 1.6;
+  margin-bottom: var(--s-3);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+a:hover {
+  color: var(--color-accent-strong);
+}
+a.article-link, a.btn {
+  display: inline-block;
+  margin-bottom: var(--s-6);
+}
+a.article-link {
+  text-decoration: underline;
+}
+a.btn {
+  background-color: var(--color-btn);
+  border-radius: var(--radius);
+  color: white;
+  padding: var(--s-2) var(--s-3);
+  transition: background-color 0.4s ease;
+}
+a.btn:hover {
+  background-color: black;
+}/*# sourceMappingURL=styles.css.map */

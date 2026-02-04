@@ -1,0 +1,59 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+// Headings & Text
+
+h1 {
+    font-size: var(--fs-4);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: var(--fs-3);
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: var(--fs-2);
+    line-height: 1.2;
+}
+
+p {
+    font-size: var(--fs-0);
+    line-height: 1.6;
+    margin-bottom: var(--s-3);
+}
+
+// Links & Buttons
+
+a {
+    color: c(color-accent);
+    text-decoration: none;
+    transition: color 0.4s ease;
+
+    &:hover {
+        color: c(color-accent-strong);
+    }
+
+    &.article-link,
+    &.btn {
+        display: inline-block;
+        margin-bottom: var(--s-6);
+    }
+
+    &.article-link {
+        text-decoration: underline;
+    }
+
+    &.btn {
+        background-color: c(color-btn);
+        border-radius: var(--radius);
+        color: white;
+        padding: var(--s-2) var(--s-3);
+        transition: background-color 0.4s ease;
+
+        &:hover {
+            background-color: black;
+        }
+    }
+}

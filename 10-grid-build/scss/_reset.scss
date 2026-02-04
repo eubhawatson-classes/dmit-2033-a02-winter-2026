@@ -1,0 +1,43 @@
+// This brings all of the variables and the helper function we defined in our _colours partial into the same namespace so we can access it.
+@use 'colours' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: c(color-bg);
+    color: c(color-text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+}
+
+article > * + * {
+    margin-top: 1em;
+}

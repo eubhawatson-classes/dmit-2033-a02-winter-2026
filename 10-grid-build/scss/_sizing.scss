@@ -1,0 +1,25 @@
+:root {
+    // Spacing Tokens
+
+    --base: 0.5rem;
+
+    @for $i from 1 through 6 {
+        // this produces something like: --s-1: calc(var(--base) * 1);
+        --s-#{$i}: calc(var(--base) * #{$i});
+    }
+
+    --radius: 4px;
+    --gutter: var(--s-3);
+
+    // Font Sizing
+
+    --fs-base: 1rem;
+    --fs-scale: 1.25;
+
+    --fs-0: var(--fs-base);
+
+    @for $i from 1 through 6 {
+        // --fs-1: calc(var(--fs-0) * var(--fs-scale));
+        --fs-#{$i}: calc(var(--fs-#{$i - 1}) * var(--fs-scale));
+    }
+}
