@@ -1,0 +1,14 @@
+header,
+footer {
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem 1rem;
+}
+
+.inner-container,
+.grid-container {
+    margin: 0 auto;
+    max-width: 1600px;
+}

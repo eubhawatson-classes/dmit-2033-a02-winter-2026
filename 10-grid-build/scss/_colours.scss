@@ -2,6 +2,7 @@
 
 $light: (
   color-bg:    #eceff1,
+  color-bg-strong: #f9fdff,
   color-text:  #323232,
   color-muted: #4b5563,
   color-border:#cfd8dc,
@@ -12,9 +13,10 @@ $light: (
 
 $dark: (
   color-bg:    #292f35,
+  color-bg-strong: #3e464e,
   color-text:  #eceff1,
   color-muted: #cfd8dc,
-  color-border:#171717,
+  color-border:#171717ec,
   color-btn:   #111,
   color-accent:#26a69a,
   color-accent-strong:#00796b

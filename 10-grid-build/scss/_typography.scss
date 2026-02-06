@@ -57,3 +57,11 @@ a {
         }
     }
 }
+
+// If we want our text to size-up once we have room on the screen, we can tweak our --fs-base in a media query.
+
+@media (min-width: $lg) {
+    :root {
+        --fs-base: 1.125rem;
+    }
+}

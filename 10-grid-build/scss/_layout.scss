@@ -1,0 +1,80 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+main {
+    .grid-container,
+    section {
+        display: grid;
+        gap: var(--s-3);
+    }
+
+    .grid-container {
+        container-type: inline-size;
+        container-name: grid;
+        margin: 0 auto;
+    }
+
+    section {
+        margin-bottom: var(--s-6);
+    }
+
+    .popular-posts {
+        article {
+            background-color: c(color-bg-strong);
+            border: 1px solid c(color-border);
+            border-radius: var(--radius);
+            box-shadow: 0 0 6px c(color-border);
+
+            img {
+                border-radius: var(--radius) var(--radius) 0 0;
+            }
+        }
+
+        div {
+            padding: var(--s-3) var(--s-3) 0 var(--s-3);
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    .grid-container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .recent-posts,
+    .popular-posts {
+        grid-template-rows: min-content;
+    }
+
+    .recent-posts {
+        grid-column: 1 / span 6;
+
+        article {
+            border-bottom: 1px solid c(color-border);
+        }
+    }
+
+    .popular-posts {
+        grid-column: 7 / span 6;
+    }
+}
+
+@media (min-width: $md) {
+    .grid-container {
+        max-width: $md;
+    }
+
+    .recent-posts {
+        grid-column: 1 / span 8;
+    }
+
+    .popular-posts {
+        grid-column: 9 / span 4;
+    }
+}
+
+@media (min-width: $lg) {
+    .grid-container {
+        max-width: $lg;
+    }
+}

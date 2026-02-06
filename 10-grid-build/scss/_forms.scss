@@ -1,0 +1,46 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+        color: c(color-muted);
+        font-weight: 300;
+        margin-bottom: var(--s-1);
+        width: 100%;
+    }
+
+    input {
+        border: 1px solid c(color-accent);
+        line-height: var(--s-5);
+        font-size: 1rem;
+        padding-left: var(--s-1);
+        transition: all 0.3s ease-in-out;
+
+        &[type="email"] {
+            border-radius: var(--radius) 0 0 var(--radius);
+            flex: 1 0 3rem;
+        }
+
+        &[type="submit"] {
+            background-color: c(color-accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            color: white;
+            cursor: pointer;
+            flex: 0 1 3rem;
+            padding: 0 var(--s-2);
+
+            &:hover,
+            &:active {
+                background-color: c(color-accent-strong);
+            }
+        }
+
+        &:hover,
+        &:active {
+            border: 1px solid c(color-accent-strong);
+        }
+    }
+}

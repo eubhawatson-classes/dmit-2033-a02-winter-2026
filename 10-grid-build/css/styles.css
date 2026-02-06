@@ -1,17 +1,6 @@
-/*
-    Below is a tiny helper function. It lets us write: 
-
-        color: c(color-text);
-
-    instead of the longer: 
-
-        color: var(--color-text);
-*/
-/*
-    @each is our Sass "foreach": for each key ($k) and value ($v) in the maps we created up above, output a line like --color-text: #323232;
-*/
 :root {
   --color-bg: #eceff1;
+  --color-bg-strong: #f9fdff;
   --color-text: #323232;
   --color-muted: #4b5563;
   --color-border: #cfd8dc;
@@ -23,9 +12,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #292f35;
+    --color-bg-strong: #3e464e;
     --color-text: #eceff1;
     --color-muted: #cfd8dc;
-    --color-border: #171717;
+    --color-border: rgba(23, 23, 23, 0.9254901961);
     --color-btn: #111;
     --color-accent: #26a69a;
     --color-accent-strong: #00796b;
@@ -64,7 +54,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
+  font-size: var(--fs-base);
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -91,6 +81,21 @@ li {
 
 article > * + * {
   margin-top: 1em;
+}
+
+header,
+footer {
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+}
+
+.inner-container,
+.grid-container {
+  margin: 0 auto;
+  max-width: 1600px;
 }
 
 h1 {
@@ -138,4 +143,185 @@ a.btn {
 }
 a.btn:hover {
   background-color: black;
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --fs-base: 1.125rem;
+  }
+}
+header {
+  background-color: var(--color-bg-strong);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 0 8px var(--color-border);
+}
+header .inner-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header .btn {
+  background-color: var(--color-bg-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: var(--s-1);
+  transition: background-color ease-in-out 0.5s;
+}
+header .btn:hover, header .btn:active {
+  background-color: var(--color-accent);
+}
+header nav {
+  flex: 0 0 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height ease-in-out 1s;
+}
+header nav.show {
+  max-height: 275px;
+}
+header nav ul li {
+  line-height: 3.5rem;
+}
+header nav ul li a {
+  display: block;
+  padding-left: var(--s-2);
+}
+
+@media (min-width: 600px) {
+  header .btn {
+    display: none;
+  }
+  header nav {
+    flex: 0 1 auto;
+    max-height: unset;
+  }
+  header nav ul {
+    display: flex;
+    gap: var(--s-4);
+  }
+}
+main .grid-container,
+main section {
+  display: grid;
+  gap: var(--s-3);
+}
+main .grid-container {
+  container-type: inline-size;
+  container-name: grid;
+  margin: 0 auto;
+}
+main section {
+  margin-bottom: var(--s-6);
+}
+main .popular-posts article {
+  background-color: var(--color-bg-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 0 6px var(--color-border);
+}
+main .popular-posts article img {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+main .popular-posts div {
+  padding: var(--s-3) var(--s-3) 0 var(--s-3);
+}
+
+@media (min-width: 740px) {
+  .grid-container {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .recent-posts,
+  .popular-posts {
+    grid-template-rows: min-content;
+  }
+  .recent-posts {
+    grid-column: 1/span 6;
+  }
+  .recent-posts article {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .popular-posts {
+    grid-column: 7/span 6;
+  }
+}
+@media (min-width: 960px) {
+  .grid-container {
+    max-width: 960px;
+  }
+  .recent-posts {
+    grid-column: 1/span 8;
+  }
+  .popular-posts {
+    grid-column: 9/span 4;
+  }
+}
+@media (min-width: 1440px) {
+  .grid-container {
+    max-width: 1440px;
+  }
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+form label {
+  color: var(--color-muted);
+  font-weight: 300;
+  margin-bottom: var(--s-1);
+  width: 100%;
+}
+form input {
+  border: 1px solid var(--color-accent);
+  line-height: var(--s-5);
+  font-size: 1rem;
+  padding-left: var(--s-1);
+  transition: all 0.3s ease-in-out;
+}
+form input[type=email] {
+  border-radius: var(--radius) 0 0 var(--radius);
+  flex: 1 0 3rem;
+}
+form input[type=submit] {
+  background-color: var(--color-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: white;
+  cursor: pointer;
+  flex: 0 1 3rem;
+  padding: 0 var(--s-2);
+}
+form input[type=submit]:hover, form input[type=submit]:active {
+  background-color: var(--color-accent-strong);
+}
+form input:hover, form input:active {
+  border: 1px solid var(--color-accent-strong);
+}
+
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--s-6) var(--s-4);
+}
+footer .inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  justify-content: space-between;
+}
+footer .inner-container .col {
+  flex: 1;
+}
+footer .inner-container .col:first-of-type, footer .inner-container .col:last-of-type {
+  flex: 1 1 100%;
+}
+footer .inner-container .col:not(:first-of-type) h2 {
+  font-size: var(--fs-1);
+  margin-bottom: var(--s-1);
+}
+
+@media (min-width: 740px) {
+  footer .inner-container .col:last-of-type {
+    flex: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */
