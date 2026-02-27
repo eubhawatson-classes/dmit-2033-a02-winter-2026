@@ -1,0 +1,26 @@
+/* This loads TailwindCSS v4 (no separate @tailwind base/components/utilities needed). */
+@import "tailwindcss";
+
+/*
+    We need to tell Tailwind where to scan for classes so it can generate
+    only what we actually use.
+
+    If your HTML files are not in the project root, adjust the glob.
+    For example, if they’re in ./dist, use:  @source "./dist/*.html";
+*/
+@source "./**/*.{html,php,md,js,ts,jsx,tsx}";
+
+/*
+    We can create some custom breakpoints; TailwindCSS v4 uses CSS variables via @theme.
+    VS Code might grumble about the @-rules — that’s fine and expected.
+*/
+@theme {
+  --breakpoint-sm: 666px;
+  --breakpoint-md: 888px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1800px;
+}
+
+/* Finally, let's load the forms plugin (v4). */
+@plugin "@tailwindcss/forms";

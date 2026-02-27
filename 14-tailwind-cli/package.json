@@ -1,0 +1,18 @@
+{
+  "name": "14-tailwind-cli",
+  "version": "1.0.0",
+  "description": "In this demo, we'll be compiling our own output with TailwindCSS v4. For a website or application 'in production' (or 'live' on the web), this is the preferred method, as the styles will be pre-compiled, not quickly assembled at runtime like with the Play CDN.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^4.2.1"
+  }
+}
